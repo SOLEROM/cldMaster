@@ -1,0 +1,211 @@
+# ==========================================================
+# Environment & Secrets
+# ==========================================================
+.env
+.env.local
+.env.*.local
+
+# allowed templates
+!.env.example
+!.env.development
+!.env.staging
+!.env.production
+
+# credentials / keys
+*.pem
+*.key
+*.secret
+*.p8
+credentials.json
+service-account*.json
+
+
+# ==========================================================
+# Python
+# ==========================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# packaging / builds
+build/
+dist/
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+*.egg-info/
+*.egg
+.installed.cfg
+pip-wheel-metadata/
+
+# testing / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.hypothesis/
+
+# static analysis
+.mypy_cache/
+.ruff_cache/
+
+
+# ==========================================================
+# Node.js / Frontend
+# ==========================================================
+node_modules/
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+.npm
+.pnp
+.pnp.*
+
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+
+# build outputs
+dist/
+*.tsbuildinfo
+
+
+# ==========================================================
+# Agent & LLM Development
+# ==========================================================
+
+# Vector databases / embeddings
+chroma/
+*.chroma
+faiss_index/
+*.faiss
+*.index
+pinecone_cache/
+
+# LLM cache
+.cache/
+llm_cache/
+response_cache/
+*.cache
+
+# Agent runtime artifacts
+agent_logs/
+session_logs/
+conversations/
+.agent_state/
+*-log.json
+
+# Temporary workspaces
+scratch/
+workspace/tmp/
+.scratchpad/
+
+# evaluation outputs
+eval_results/
+benchmark_results/
+evals/outputs/
+
+
+# ==========================================================
+# ML Models / Checkpoints (large binaries)
+# ==========================================================
+*.pt
+*.pth
+*.bin
+*.gguf
+*.ggml
+
+checkpoints/
+models/weights/
+
+
+# ==========================================================
+# Generated Code
+# ==========================================================
+src/generated/
+
+
+# ==========================================================
+# Databases
+# ==========================================================
+*.db
+*.sqlite
+*.sqlite3
+
+
+# ==========================================================
+# Jupyter
+# ==========================================================
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+
+# ==========================================================
+# Testing / Reports
+# ==========================================================
+coverage/
+*.lcov
+.nyc_output/
+playwright-report/
+test-results/
+
+
+# ==========================================================
+# Logs
+# ==========================================================
+*.log
+logs/
+post-log.json
+pre-log.json
+
+
+# ==========================================================
+# Temp / Runtime
+# ==========================================================
+tmp/
+temp/
+
+
+# ==========================================================
+# IDE / Editors
+# ==========================================================
+.idea/
+.vscode/
+
+*.swp
+*.swo
+*~
+
+*.sublime-workspace
+*.sublime-project
+
+
+# ==========================================================
+# OS Files
+# ==========================================================
+.DS_Store
+.DS_Store?
+._*
+
+.Spotlight-V100
+.Trashes
+
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+
+## play
+getShitDone/play*

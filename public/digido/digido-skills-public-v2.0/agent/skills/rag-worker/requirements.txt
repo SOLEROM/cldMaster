@@ -1,0 +1,8 @@
+llama-index-core
+llama-index-vector-stores-qdrant
+llama-index-embeddings-google-genai
+llama-index-llms-google-genai
+llama-index-readers-file
+qdrant-client
+langchain-community
+google-genai
