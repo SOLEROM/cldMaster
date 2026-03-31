@@ -113,3 +113,47 @@ Component:
 ```
 
 *  When spawned, a teammate loads the same project context as a regular session
+
+
+
+### Team Configuration
+
+Team configurations are stored at `~/.claude/teams/{team-name}/config.json`.
+
+### Architecture
+
+```mermaid
+graph TB
+    Lead["Team Lead<br/>(Coordinator)"]
+    TaskList["Shared Task List<br/>(Dependencies)"]
+    Mailbox["Mailbox<br/>(Messages)"]
+    T1["Teammate 1<br/>(Own Context)"]
+    T2["Teammate 2<br/>(Own Context)"]
+    T3["Teammate 3<br/>(Own Context)"]
+
+    Lead -->|assigns tasks| TaskList
+    Lead -->|sends messages| Mailbox
+    TaskList -->|picks up work| T1
+    TaskList -->|picks up work| T2
+    TaskList -->|picks up work| T3
+    T1 -->|reads/writes| Mailbox
+    T2 -->|reads/writes| Mailbox
+    T3 -->|reads/writes| Mailbox
+    T1 -->|updates status| TaskList
+    T2 -->|updates status| TaskList
+    T3 -->|updates status| TaskList
+
+    style Lead fill:#e1f5fe,stroke:#333,color:#333
+    style TaskList fill:#fff9c4,stroke:#333,color:#333
+    style Mailbox fill:#f3e5f5,stroke:#333,color:#333
+    style T1 fill:#e8f5e9,stroke:#333,color:#333
+    style T2 fill:#e8f5e9,stroke:#333,color:#333
+    style T3 fill:#e8f5e9,stroke:#333,color:#333
+```
+
+**Key components**:
+
+- **Team Lead**: The main Claude Code session that creates the team, assigns tasks, and coordinates
+- **Shared Task List**: A synchronized list of tasks with automatic dependency tracking
+- **Mailbox**: An inter-agent messaging system for teammates to communicate status and coordinate
+- **Teammates**: Independent Claude Code instances, each with their own context window
